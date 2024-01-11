@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+      <link rel="stylesheet" href="../static/assets/css/projetstyle.css"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+      <!-- Bootstrap CSS-->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Bootstrap JS-->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="icon" href="../static/assets/images/favicon.ico" type="image/x-icon">
+    <!-- fontawesome icon -->
+    <link rel="stylesheet" href="../static/assets/fonts/fontawesome/css/fontawesome-all.min.css">
+    <!-- animation css -->
+    <link rel="stylesheet" href="../static/assets/plugins/animation/css/animate.min.css">
+    <!-- morris css -->
+    <link rel="stylesheet" href="/static/assets/plugins/chart-morris/css/morris.css">
+
+    <link rel="stylesheet" href="../static/assets/css/style.css">
+
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <title>Job.AT</title>
+
+
+
+
+
+  </head>
+  <body>
+
+  <div class="menu-bar">
+   <a href="{{ url_for('index') }}">
+
+                <h1 class="logo">JOB.AT </h1></a>
+
+        <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+
+                </li>
+            </ul>
+
+        </div>
+
+      	<h6>Welcome back, {{ user.name }}!</h6>
+
+
+
+      </ul>
+    </div>
+
+
+  </div>
+  <br>
+  </div>
+<div class="card-block table-border-style">
+                  <div class="card-block px-0 py-3">
+                  <div id="table-container" style="max-height: 600px;overflow-y: scroll">
+
+                                                <table  class="table table-hover  table-condensed wizard-container" id="my-table" >
+                                                <thead>
+                                                <th>N°</th>
+                                                <th>Position</th>
+                                                <th>Date</th>
+                                                </thead>
+                                                    <tbody style="max-height: 600px;overflow-y: scroll">
+                                                    {% if candidate %}
+
+                                                            {% for row1 in candidate %}
+                                                        <tr class="unread" rowspan="3" >
+                                                            <!--<td><img class="rounded-circle" style="width:40px; height: 60px" src="../static/assets/images/user/avatar-1.jpg" alt="activity-user"></td>
+                                                            -->
+                                                            <td >
+                                                                <h6 >{{ row1.id }}</h6>
+
+                                                            </td>
+
+                                                            <td >
+                                                                <h6 >{{ row1.offre }}</h6>
+
+                                                            </td>
+                                                            <td>
+
+                                                                <h6 >{{ row1.date }}</h6>
+                                                                  </td>
+
+                                                        </tr>
+                                                    {% endfor %}
+
+
+{% else %}
+    <p>No candidature found for this given email. {{ candidate.email }}</p>
+{% endif %}
+
+
+                                                    </tbody>
+                                                </table></div></div></div>
+
+  </body>
+
+</html>

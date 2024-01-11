@@ -1,0 +1,397 @@
+:root {
+  --color-primary: #0073ff;
+  --color-white: white;
+  --color-black: #89d6fb;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+
+}
+
+.logo {
+
+  font-size: 30px;
+  color: white;
+}
+
+
+
+.menu-bar {
+  background: linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%);
+  color: rgba(0, 0, 0, 0.6);
+  height: 12%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5%;
+
+  position: relative;
+}
+
+.menu-bar ul {
+  list-style: none;
+  display: flex;
+}
+
+.menu-bar ul li {
+
+  padding: 10px 30px;
+  position: relative;
+}
+
+.menu-bar ul li a {
+  font-size: 20px;
+  color: var(--color-white);
+  text-decoration: none;
+
+  transition: all 0.3s;
+}
+
+.menu-bar ul li a:hover {
+  color: var(--color-primary);
+}
+/*bank la classe dans la balise i pour un menu sous menu*/
+.bank {
+  float: left;
+  margin-left: 0px;
+  padding-top: 3px;
+}
+* {box-sizing: border-box;}
+/* dropdown menu style */
+.dropdown-menu {
+  display: none;
+}
+
+.menu-bar ul li:hover .dropdown-menu {
+  display: block;
+  position: absolute;
+  width: 220px;
+  border-radius: 10px;
+  top: 68px;
+  background-color: var(--color-black);
+  box-shadow: var(--color-black);
+}
+
+.menu-bar ul li:hover .dropdown-menu ul {
+  display: block;
+  margin: 10px;
+}
+
+.menu-bar ul li:hover .dropdown-menu ul li {
+  width: 250px;
+  padding: 10px 0;
+}
+
+.dropdown-menu-1 {
+  display: none;
+}
+
+.dropdown-menu ul li:hover .dropdown-menu-1 {
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 0;
+  background: linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%);
+  color: rgba(0, 0, 0, 0.6); ;
+}
+
+
+
+/*design galerie*/
+
+
+img{
+
+width:1600px;
+  height: 400px;
+}
+
+
+.slideshow{
+
+
+overflow: hidden;
+max-width: 1200px;
+  max-height: 400px;
+  padding: 0px;
+margin: auto;
+position: relative
+
+}
+
+.slideshow ul{
+
+padding-bottom: 66.67%;/* ratio pour le responsive */
+margin: 0;
+list-style-type: none;
+position: relative
+
+  }
+
+
+.slideshow li{
+
+top: 0;
+left: 0;
+animation: slideshow 25s ease infinite;
+position: absolute;
+opacity: 0;
+
+
+}
+
+
+
+.slideshow li:nth-child(2){
+
+animation-delay: 5s
+
+}
+
+.slideshow li:nth-child(3){
+
+animation-delay: 5s
+
+}
+
+.slideshow li:nth-child(4){
+
+animation-delay: 5s
+
+}
+
+.slideshow li:nth-child(5){
+
+animation-delay: 5s
+
+}
+
+
+@keyframes slideshow{
+
+0%{opacity: 0}
+
+10%{opacity: 1}
+
+20%{opacity: 1}
+
+25%{opacity: 0}
+
+100%{opacity: 0}
+
+  }
+
+
+
+
+/*design tableau*/
+
+table, caption, th, td {
+
+border: 2px solid skyblue;
+  border-collapse: collapse;
+  padding: 8px;
+  margin: 8px;
+
+}
+
+/*design footer*/
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Yaldevi', sans-serif;
+}
+.footer{background: #89d6fb; width: 100%; margin: 0%; padding: 0%;
+display: inline-block;}
+
+a.footerlogo {color:#fff; width: 10%;
+float:left; padding: 1% 1% 1% 1%; text-decoration: none; margin: 0% 5% 0% 0%;}
+
+img.icon {width:25px; float:left; height:25px; margin: 7px; position: relative;}
+
+.testo_disclaimer {color:white; padding: 0; font-size: 15px; text-align: left; width: 100%;}
+
+.disclaimer {text-align:center;}
+
+.icon:hover {opacity: 0.5;}
+
+
+/* design search bar*/
+.search-bar{
+  width: 100%;
+  max-width: 700px;
+  background-color: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  padding: 10px  20px;
+}
+.search-bar input{
+  flex: 1;
+  border-radius: 20px ;
+  border-width: 5px;
+  border-color: #0073ff;
+  outline: blue;
+  padding: 24px 20px;
+  font-size: 20px;
+
+}
+.search-bar button {
+  width: 100px;
+  height: 50px;
+  margin-outside: 10px;
+  border-radius: 20px ;
+  border-width: 5px;
+  border-color: #0073ff;
+  background-color:#0073ff;
+  font-size: 20px;
+  font-palette: white;
+  outline: blue;
+  cursor: pointer;
+  margin: 10px 10px;
+}
+
+/*design les bouttons devenir client et je suis client*/
+.btn{
+  padding: 10px 18px;
+  font-size: 16px;
+  color: #f1f1f1;
+  background-color: #0073ff;
+  border: none;
+  font-weight: 700;
+  outline: none;
+  border-radius: 30px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: opacity .3s linear;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+
+.block_b{
+  margin: 60px auto;
+  width: 1275px;
+
+
+  height: 150px;
+
+  background-color: whitesmoke;
+}
+
+
+
+
+.block_b_b1{
+
+  margin: 60px auto;
+  width: 1275px;
+  background-color: whitesmoke;
+  height: auto;
+}
+
+
+
+.h11 {
+  color: white;
+}
+
+
+@media all and (max-width: 767px) {
+    .form-control.refine-radius {
+        width:auto;
+        min-width: 250px
+    }
+}
+
+.form-control::-webkit-input-placeholder {
+    text-align: center;
+    color: #eb800e;
+    font-weight: 400;
+    font-family: open sans,sans-serif
+}
+
+.form-control:-moz-placeholder {
+    text-align: center;
+    color: #eb800e;
+    font-weight: 400;
+    font-family: open sans,sans-serif
+}
+
+.form-control::-moz-placeholder {
+    text-align: center;
+    color: #eb800e;
+    font-weight: 400;
+    font-family: open sans,sans-serif
+}
+
+.form-control:-ms-input-placeholder {
+    text-align: center;
+    color: #eb800e;
+    font-weight: 400;
+    font-family: open sans,sans-serif
+}
+
+.form-control__textarea {
+    min-height: 140px
+}
+
+.form-control__centered {
+    background: #fbfbfb;
+    font-size: 14px
+}
+
+.form-control__centered::-webkit-input-placeholder {
+    text-align: center
+}
+
+.form-control__centered:-moz-placeholder {
+    text-align: center
+}
+
+.form-control__centered::-moz-placeholder {
+    text-align: center
+}
+
+.form-control__centered:-ms-input-placeholder {
+    text-align: center
+}
+
+.form-control[disabled] {
+    opacity: .5
+}
+
+.form-control[type=file]:focus,.form-control[type=checkbox]:focus,.form-control[type=radio]:focus {
+    outline: none
+}
+
+.form-label {
+    margin-bottom: 0;
+    font-weight: 400;
+    vertical-align: middle;
+    font-size: 14px;
+    text-align: left;
+    display: block
+}

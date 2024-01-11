@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Connexion</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form id="passwordForm" action="/signup" method="post" enctype="multipart/form-data">
+                <h1>Create Account</h1>
+
+
+                <input type="text"  id="name" name="name" required placeholder="Name">
+
+                <input type="email" id="email" name="email" required placeholder="Email">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+
+                <input type="password" placeholder="Confirm Password" id="confirmPassword" name="confirmPassword" required>
+                <span id="passwordError" class="error"></span>
+
+
+
+                 <select name="civility" id="civility" required>
+                <option value="">--Select your civility--</option>
+               <option value="Mr">Mr</option>
+                <option value="Mme">Mme</option>
+                <option value="Mme">Mlle</option>
+
+                 </select>
+
+
+                <input type="date" placeholder="Date of birth" name="dateOfBirth" required>
+
+                <input type="file" placeholder="Import your CV" name="cv" required>
+                <button  type="submit">Sign Up</button>
+            </form>
+        </div>
+
+
+        <div class="form-container sign-in" >
+            <form id="signinform" action="/signin" method="post">
+                <h1>Sign In</h1>
+
+
+                <input type="email" placeholder="Email" name="email">
+                <input type="password" placeholder="Password" name="password">
+                <a href="#">Forget Your Password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Welcome, Friend!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+
+  <script>
+    document.getElementById('passwordForm').addEventListener('submit', function(event) {
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      const passwordError = document.getElementById('passwordError');
+
+      if (password !== confirmPassword) {
+        passwordError.textContent = 'Passwords do not match';
+        event.preventDefault();
+      } else {
+        passwordError.textContent = '';
+      }
+    });
+  </script>
+
+</html>
